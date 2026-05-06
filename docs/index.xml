@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+  <head>
+    <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Agent Framework Scratch — 手写 Agent 框架</title>
+    <style type="text/css">
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+        color: #e8e0ff;
+        background: radial-gradient(1200px 600px at 10% -10%, #4c1d95 0%, transparent 55%),
+          radial-gradient(900px 500px at 90% 20%, #5b21b6 0%, transparent 50%),
+          #0f0a1a;
+        line-height: 1.65;
+      }
+      a { color: #c4b5fd; }
+      .wrap { max-width: 920px; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+      .hero {
+        border: 1px solid rgba(196, 181, 253, 0.25);
+        border-radius: 16px;
+        padding: 2rem 1.75rem;
+        background: rgba(24, 15, 48, 0.65);
+        backdrop-filter: blur(8px);
+        box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+      }
+      h1 {
+        margin: 0 0 0.75rem;
+        font-size: clamp(1.6rem, 4vw, 2.1rem);
+        letter-spacing: 0.02em;
+      }
+      .tagline {
+        margin: 0 0 1.25rem;
+        color: #c7b8f3;
+        font-size: 1.05rem;
+      }
+      .badges { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.25rem; }
+      .badge {
+        display: inline-block;
+        padding: 0.25rem 0.65rem;
+        border-radius: 999px;
+        font-size: 0.78rem;
+        border: 1px solid rgba(196, 181, 253, 0.35);
+        background: rgba(91, 33, 182, 0.35);
+        color: #ede9fe;
+      }
+      h2 {
+        margin: 2rem 0 0.75rem;
+        font-size: 1.15rem;
+        color: #ddd6fe;
+      }
+      p { margin: 0.65rem 0; }
+      ul { margin: 0.5rem 0 0 1.15rem; padding: 0; }
+      li { margin: 0.35rem 0; }
+      .note {
+        margin-top: 1.75rem;
+        padding: 1rem 1.1rem;
+        border-radius: 12px;
+        background: rgba(76, 29, 149, 0.35);
+        border: 1px solid rgba(167, 139, 250, 0.35);
+        font-size: 0.92rem;
+        color: #ddd6fe;
+      }
+      code {
+        font-family: ui-monospace, Consolas, monospace;
+        font-size: 0.9em;
+        padding: 0.1em 0.35em;
+        border-radius: 6px;
+        background: rgba(0, 0, 0, 0.35);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="hero">
+        <h1>Agent Framework Scratch</h1>
+        <p class="tagline">手写 Agent 框架 — 从循环与工具开始，把智能体做成可读、可换、可测的代码。</p>
+        <div class="badges">
+          <span class="badge">hand-written core</span>
+          <span class="badge">language: 中文文档</span>
+          <span class="badge">pages: docs/</span>
+          <span class="badge">entry: index.xml</span>
+        </div>
+        <p>
+          本仓库是一个<strong>从头实现</strong>的 Agent 实验项目：关注对话与工具调用的主循环、注册与执行隔离、以及后续可扩展的记忆与多模型适配。
+          与「积木式 SDK」不同，这里优先保证<strong>你能打开文件就读懂数据流</strong>，再逐步加上工程化能力。
+        </p>
+      </div>
+
+      <h2>当前焦点</h2>
+      <ul>
+        <li>Agent 主循环：思考 → 行动 → 观察，终止条件与迭代上限可控。</li>
+        <li>工具层：显式注册、同步/异步边界清晰，便于对接 HTTP、脚本与本地能力。</li>
+        <li>上下文：可插拔的压缩与摘要策略（后续章节）。</li>
+      </ul>
+
+      <h2>为何使用 index.xml</h2>
+      <p>
+        GitHub Pages 默认会查找 <code>index.html</code>。本仓库在 <code>docs/index.html</code> 中跳转到本页；
+        你也可以<strong>直接访问</strong>本文件对应的 URL（路径以 <code>/index.xml</code> 结尾），用于固定「可订阅的 XHTML 文档」入口。
+      </p>
+
+      <div class="note">
+        部署：仓库 Settings → Pages → Source 选择分支的 <code>/docs</code> 文件夹。预览本地可在 <code>docs</code> 目录运行
+        <code>python -m http.server</code> 后打开 <code>/index.xml</code>。
+      </div>
+    </div>
+  </body>
+</html>
